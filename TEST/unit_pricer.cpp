@@ -3,8 +3,6 @@
 
 #include "../PRICING/pricer.hpp"
 
-namespace lvp::test
-{
 int RunUnitPricerTests()
 {
     int failures = 0;
@@ -32,5 +30,4 @@ int RunUnitPricerTests()
     }
 
     return failures;
-}
 }

@@ -1,9 +1,8 @@
 #pragma once
 
-namespace lvp::test
-{
-int RunUnitPricerTests();
-int RunUnitSurfaceTests();
-int RunUnitLocalVolTests();
-int RunAllTests();
-}
+
+int RunUnitInterpolTests();
+//int RunUnitSurfaceTests();
+//int RunUnitLocalVolTests();
+//int RunUnitPricerTests();
+//int RunAllTests();

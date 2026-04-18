@@ -3,8 +3,6 @@
 #include <cmath>
 #include <iostream>
 
-namespace lvp::test
-{
 inline int CheckTrue(bool condition, const char* message)
 {
     if (!condition)
@@ -12,6 +10,7 @@ inline int CheckTrue(bool condition, const char* message)
         std::cout << "[FAIL] " << message << '\n';
         return 1;
     }
+    std::cout << "[PASS] " << message << '\n';
     return 0;
 }
 
@@ -22,6 +21,7 @@ inline int CheckNear(double actual, double expected, double tolerance, const cha
         std::cout << "[FAIL] " << message << " | actual=" << actual << " expected=" << expected << " tol=" << tolerance << '\n';
         return 1;
     }
+    std::cout << "[PASS] " << message << '\n';
     return 0;
 }
-}
+
