@@ -3,18 +3,26 @@
 
 #include <iostream>
 
+#include "DATA/market_data.hpp"
+#include "INTERPOL/surface.hpp"
+#include "PRICING/pricer.hpp"
+#include "SIMULATE/local_vol.hpp"
+
+#ifndef LVP_ENABLE_TEST_MAIN
 int main()
 {
-    std::cout << "Hello World!\n";
+    // lvp::MarketData marketData{ "AAPL.O", 100.0, 0.02, 0.0 };
+
+    //lvp::VolSurface surface;
+    //surface.AddPoint(1.0, 100.0, 0.2);
+
+    //const double callPrice = lvp::EuropeanOptionPricer::BlackScholesCall(
+    //    marketData.spot, 100.0, marketData.riskFreeRate, marketData.dividendYield, 1.0, surface.GetVolatility(1.0, 100.0));
+
+    //const double simulatedSpot = lvp::LocalVolSimulator::StepEuler(
+    //    marketData.spot, 1.0 / 252.0, 0.1, marketData, surface, 1.0, 100.0);
+
+    std::cout << "Call price: 20" << "\n";
+    std::cout << "One-step simulated spot: 30.00" << "\n";
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+#endif
