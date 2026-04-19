@@ -23,6 +23,8 @@ struct HaganCalibrationResult
     int iterations{};
     double rmse{};
     HaganCalibrationParams params;
+    std::map<std::string, double> optimal_params;
+    std::map<std::string, double> calibration_results;
 };
 
 class Interpol
@@ -34,17 +36,15 @@ public:
     double rho   = 0.0;
     std::function<double(double)> fwd_curve;
 
-    Interpol(double alpha_, double beta_, double gamma_,
-             std::vector<std::pair<int, double>> fwd_curve_);
+    Interpol(double alpha_, double beta_, double gamma_, std::vector<std::pair<double, double>> fwd_curve_);
 
-    void setParams(double alpha_, double beta_, double gamma_, double rho_,
-                   std::vector<std::pair<int, double>> fwd_curve_);
+    void setParams(double alpha_, double beta_, double gamma_, double rho_, std::vector<std::pair<double, double>> fwd_curve_);
 
     std::function<double(double, double)> interpolate_hagan();
 
     HaganCalibrationResult calibrate_hagan(
         const std::map<std::string, std::vector<std::pair<double, double>>>& market_vols,
-        const std::string& expiry,
+        const double expiry,
         bool verbose = true,
         int max_iterations = 250);
 };

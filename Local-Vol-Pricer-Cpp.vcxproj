@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="app.cpp" />
-    <ClCompile Include="INTERPOL\calibration_hagan.cpp" />
+    <ClCompile Include="calibration.cpp" />
     <ClCompile Include="INTERPOL\interpol.cpp" />
     <ClCompile Include="INTERPOL\surface.cpp" />
     <ClCompile Include="PRICING\pricer.cpp" />

@@ -5,7 +5,7 @@
 #include <stdexcept>
 #include <vector>
 
-double interpolate1D(const std::vector<std::pair<int, double>>& data, double x) {
+double interpolate1D(const std::vector<std::pair<double, double>>& data, double x) {
     if (data.empty()) {
         throw std::invalid_argument("Data vector is empty");
     }
@@ -38,7 +38,7 @@ double interpolate1D(const std::vector<std::pair<int, double>>& data, double x) 
 }
 
 // Interpolation function generator
-std::function<double(double)> makeInterpolator(const std::vector<std::pair<int, double>>& data) {
+std::function<double(double)> makeInterpolator(const std::vector<std::pair<double, double>>& data) {
     auto dataCopy = data;
     
     return [dataCopy](double x) -> double {

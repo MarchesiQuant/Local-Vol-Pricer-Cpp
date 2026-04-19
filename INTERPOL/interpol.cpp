@@ -6,22 +6,22 @@
 #include <functional>
 
 // Flat curve for default setting
-std::vector<std::pair<int, double>> flat_curve = []() {
-    std::vector<std::pair<int, double>> curve;
+std::vector<std::pair<double, double>> flat_curve = []() {
+    std::vector<std::pair<double, double>> curve;
     for (int i = 1; i <= 100; ++i) {
-        curve.push_back({ i, 100.0 });
+        curve.push_back({ static_cast<double>(i), 100.0 });
     }
     return curve;
 }();
 
 // Constructor
-Interpol::Interpol(double alpha_, double beta_, double gamma_, std::vector<std::pair<int, double>> fwd_curve_)
+Interpol::Interpol(double alpha_, double beta_, double gamma_, std::vector<std::pair<double, double>> fwd_curve_)
     : alpha(alpha_), beta(beta_), gamma(gamma_), fwd_curve(makeInterpolator(fwd_curve_))
 {
 }
 
 // Set parameters
-void Interpol::setParams(double alpha_, double beta_, double gamma_, double rho_, std::vector<std::pair<int, double>> fwd_curve_)
+void Interpol::setParams(double alpha_, double beta_, double gamma_, double rho_, std::vector<std::pair<double, double>> fwd_curve_)
 {
     alpha     = alpha_;
     beta      = beta_;
