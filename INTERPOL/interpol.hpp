@@ -43,7 +43,7 @@ public:
     std::function<double(double, double)> interpolate_hagan();
 
     HaganCalibrationResult calibrate_hagan(
-        const std::map<std::string, std::vector<std::pair<double, double>>>& market_vols,
+        const std::vector<std::pair<double, double>>& market_vols,
         const double expiry,
         bool verbose = true,
         int max_iterations = 250);

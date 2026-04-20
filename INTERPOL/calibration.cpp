@@ -19,8 +19,9 @@ HaganCalibrationResult Interpol::calibrate_hagan(
     const std::vector<std::pair<double, double>>& market_vols,
     const double expiry,
     bool verbose,
-    int max_iterations){
+    int max_iterations)
 
+{
     struct DataPoint { double K; double expiry; double vol; };
     std::vector<DataPoint> data;
     data.reserve(market_vols.size());
@@ -67,6 +68,7 @@ HaganCalibrationResult Interpol::calibrate_hagan(
             }
         }
 
+        // RMSE
         return std::sqrt(sum_sq / static_cast<double>(std::max(1, count)));
     };
 
